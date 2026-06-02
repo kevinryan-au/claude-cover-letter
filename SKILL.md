@@ -1,5 +1,5 @@
 ---
-name: claude-cover-letter
+name: cover-letter
 description: Tailor cover letters for job applications. Use when a cover letter is required for a specific role — trigger by pasting in job ad text.
 ---
 
