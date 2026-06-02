@@ -46,13 +46,30 @@ Use the **same single file as the chat path** — a Project just keeps it loaded
 
 ### Claude Code — paid, full experience
 
-Clone the repo into your skills folder:
+Clone the repo into your skills folder — pinned to a release tag so what you
+install can't change underneath you:
 
 ```bash
-git clone https://github.com/kevinryan-au/claude-cover-letter.git ~/.claude/skills/cover-letter
+git clone --branch v1.0.0 --depth 1 \
+  https://github.com/kevinryan-au/claude-cover-letter.git \
+  ~/.claude/skills/cover-letter
 ```
 
-Then type `/cover-letter` in Claude Code. (Or drag [`install.md`](install.md) into a Claude Code session and it installs itself.)
+Then **confirm you installed the exact published release** before first use, and
+type `/cover-letter`:
+
+```bash
+git -C ~/.claude/skills/cover-letter rev-parse v1.0.0
+# expected: 3b0bbbad9d1103124e25abd2bc35fbc1ea6ea383
+```
+
+A commit SHA is a hash of the whole tree, so a match means your copy is
+bit-for-bit the release on the
+[Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page —
+no tampering. See [`SECURITY.md`](SECURITY.md) for what the skill does with your
+data, what runs on your machine, and the signed-tag roadmap. (Prefer convenience?
+You can still drag [`install.md`](install.md) into a Claude Code session — but
+reading `SKILL.md` and `scripts/` first is the trust-but-verify path.)
 
 - **Output:** a ready-to-send `.docx`, styled to match your CV.
 - **Memory:** the only version that compounds — after each letter it writes back what it learned (phrasing fixes, worked examples, sharper skill lines) automatically.
@@ -99,7 +116,10 @@ install.md                    — drag-into-Claude-Code installer
 templates/profile_template.md — your profile format
 references/                   — tone & phrasing, styling spec, worked-examples format
 scripts/build-chat-edition.sh — regenerates the Chat Edition
+scripts/profile-sync.sh       — local backup + git history for your profile
 scripts/visual_qa.sh          — optional .docx preview (Claude Code)
+SECURITY.md                   — data handling, what runs locally, how to verify
+LICENSE                       — MIT
 ```
 
 ## Updating
@@ -114,3 +134,23 @@ Your profile file lives outside the skill and is never touched by updates.
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (for the Claude Code path) + Python 3 with `python-docx` (installed automatically if missing)
 - Any Claude account (for chat); a paid plan (for Projects / Claude Code)
 - Your CV in any common format: Word, PDF, plain text, or paste
+
+## Security & privacy
+
+Your CV and profile stay **on your machine** — `~/cover-letter-profile.md` and
+`~/.cover-letter/`, never committed here, never sent to the author. No telemetry,
+no analytics, no remote code fetched at runtime; the only outbound network call is
+an optional `git push` to a private remote *you* configure yourself. Full detail —
+what's collected, where it lives, what runs, and how to verify the release
+signature — is in [`SECURITY.md`](SECURITY.md). This repo is small and unobfuscated
+by design: read `SKILL.md` and `scripts/` before you install.
+
+Authenticity: the canonical repo is
+`github.com/kevinryan-au/claude-cover-letter`, linked from
+[kevinryan-site.pages.dev/projects](https://kevinryan-site.pages.dev/projects/),
+and each release tag pins to a fixed, hash-verifiable commit (signed tags in
+progress — see [`SECURITY.md`](SECURITY.md)).
+
+## License
+
+[MIT](LICENSE) © 2026 Kevin Ryan.

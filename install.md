@@ -6,15 +6,26 @@ You are reading an installer file. Please follow these instructions exactly.
 
 This installs the cover-letter skill into Claude Code so the user can invoke it with `/cover-letter`.
 
+**What it touches / your data (state this to the user before running):**
+- It clones one public repo (`github.com/kevinryan-au/claude-cover-letter`) into `~/.claude/skills/cover-letter`. Nothing else is downloaded or executed at install time.
+- Your CV and profile stay on your machine (`~/cover-letter-profile.md`, `~/.cover-letter/`); nothing is sent to the author — no telemetry. Details: `SECURITY.md` in the repo.
+
 ## Steps to follow
 
-1. Run this bash command:
+1. Clone, pinned to a release tag (so the install can't change underneath the user):
 
 ```bash
-git clone https://github.com/kevinryan-au/claude-cover-letter.git ~/.claude/skills/cover-letter
+git clone --branch v1.0.0 --depth 1 https://github.com/kevinryan-au/claude-cover-letter.git ~/.claude/skills/cover-letter
 ```
 
-2. Verify the install succeeded by confirming that `~/.claude/skills/cover-letter/SKILL.md` exists.
+2. Verify the install: confirm `~/.claude/skills/cover-letter/SKILL.md` exists, and confirm the code matches the published release:
+
+```bash
+git -C ~/.claude/skills/cover-letter rev-parse v1.0.0
+# expected: 3b0bbbad9d1103124e25abd2bc35fbc1ea6ea383
+```
+
+   A matching SHA means the working copy is bit-for-bit the published v1.0.0 release (a commit SHA hashes the whole tree). If it differs, stop and point the user to `SECURITY.md`.
 
 3. Tell the user:
    - The skill installed successfully
