@@ -19,13 +19,13 @@ Your personal data (CV, career anchors, skills voice, vocabulary, phrasing prefe
 Copy the skill directory into your Claude skills folder:
 
 ```bash
-cp -r claude-cover-letter ~/.claude/skills/cover-letter-tailoring
+cp -r claude-cover-letter ~/.claude/skills/claude-cover-letter
 ```
 
 Then invoke it in Claude Code:
 
 ```
-/cover-letter-tailoring
+/claude-cover-letter
 ```
 
 On first run it will guide you through a one-time setup (~5 minutes): read your CV, interview you for a few details, and write your profile file to `~/cover-letter-profile.md`. Every application after that is paste-and-go.
