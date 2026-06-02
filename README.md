@@ -46,30 +46,31 @@ Use the **same single file as the chat path** — a Project just keeps it loaded
 
 ### Claude Code — paid, full experience
 
-Clone the repo into your skills folder — pinned to a release tag so what you
-install can't change underneath you:
+Clone the repo into your skills folder — pinned to a signed release tag so what
+you install can't change underneath you:
 
 ```bash
-git clone --branch v1.0.0 --depth 1 \
+git clone --branch v1.0.1 --depth 1 \
   https://github.com/kevinryan-au/claude-cover-letter.git \
   ~/.claude/skills/cover-letter
 ```
 
-Then **confirm you installed the exact published release** before first use, and
-type `/cover-letter`:
+Then **verify the release** before first use, and type `/cover-letter`. Release
+tags are SSH-signed, so once you've trusted the author's key (see
+[`SECURITY.md`](SECURITY.md)):
 
 ```bash
-git -C ~/.claude/skills/cover-letter rev-parse v1.0.0
-# expected: 3b0bbbad9d1103124e25abd2bc35fbc1ea6ea383
+git -C ~/.claude/skills/cover-letter tag -v v1.0.1   # "Good \"git\" signature for 285323821+kevinryan-au@…"
 ```
 
-A commit SHA is a hash of the whole tree, so a match means your copy is
-bit-for-bit the release on the
-[Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page —
-no tampering. See [`SECURITY.md`](SECURITY.md) for what the skill does with your
-data, what runs on your machine, and the signed-tag roadmap. (Prefer convenience?
-You can still drag [`install.md`](install.md) into a Claude Code session — but
-reading `SKILL.md` and `scripts/` first is the trust-but-verify path.)
+No keys handy? Confirm the commit SHA instead — `git -C ~/.claude/skills/cover-letter
+rev-parse v1.0.1` must match the value on the
+[Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page (a
+SHA hashes the whole tree, so a match means no tampering). See
+[`SECURITY.md`](SECURITY.md) for what the skill does with your data and what runs
+on your machine. (Prefer convenience? You can still drag [`install.md`](install.md)
+into a Claude Code session — but reading `SKILL.md` and `scripts/` first is the
+trust-but-verify path.)
 
 - **Output:** a ready-to-send `.docx`, styled to match your CV.
 - **Memory:** the only version that compounds — after each letter it writes back what it learned (phrasing fixes, worked examples, sharper skill lines) automatically.
@@ -148,8 +149,8 @@ by design: read `SKILL.md` and `scripts/` before you install.
 Authenticity: the canonical repo is
 `github.com/kevinryan-au/claude-cover-letter`, linked from
 [kevinryan-site.pages.dev/projects](https://kevinryan-site.pages.dev/projects/),
-and each release tag pins to a fixed, hash-verifiable commit (signed tags in
-progress — see [`SECURITY.md`](SECURITY.md)).
+and release tags are **SSH-signed** and hash-verifiable (see
+[`SECURITY.md`](SECURITY.md)).
 
 ## License
 

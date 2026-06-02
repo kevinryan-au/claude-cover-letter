@@ -12,20 +12,19 @@ This installs the cover-letter skill into Claude Code so the user can invoke it 
 
 ## Steps to follow
 
-1. Clone, pinned to a release tag (so the install can't change underneath the user):
+1. Clone, pinned to a signed release tag (so the install can't change underneath the user):
 
 ```bash
-git clone --branch v1.0.0 --depth 1 https://github.com/kevinryan-au/claude-cover-letter.git ~/.claude/skills/cover-letter
+git clone --branch v1.0.1 --depth 1 https://github.com/kevinryan-au/claude-cover-letter.git ~/.claude/skills/cover-letter
 ```
 
-2. Verify the install: confirm `~/.claude/skills/cover-letter/SKILL.md` exists, and confirm the code matches the published release:
+2. Verify the install: confirm `~/.claude/skills/cover-letter/SKILL.md` exists, then verify the signed tag:
 
 ```bash
-git -C ~/.claude/skills/cover-letter rev-parse v1.0.0
-# expected: 3b0bbbad9d1103124e25abd2bc35fbc1ea6ea383
+git -C ~/.claude/skills/cover-letter tag -v v1.0.1
 ```
 
-   A matching SHA means the working copy is bit-for-bit the published v1.0.0 release (a commit SHA hashes the whole tree). If it differs, stop and point the user to `SECURITY.md`.
+   A "Good \"git\" signature" confirms the release is the author's and unmodified. If the user hasn't trusted the author's signing key yet, point them to `SECURITY.md` (it has the one-time key-trust step, plus a commit-SHA fallback). If verification fails outright, stop.
 
 3. Tell the user:
    - The skill installed successfully

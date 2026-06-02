@@ -4,15 +4,15 @@ All notable changes to this skill are listed here. Versions follow [semantic ver
 
 ---
 
-## [Unreleased]
+## [1.0.1] — 2026-06-03
 
 Trust & transparency hardening (no behaviour change to the assistant):
 
 - Added `LICENSE` (MIT).
 - Added `SECURITY.md`: what data is handled, where it lives, what leaves the machine (nothing by default), what runs locally, and how to verify provenance.
-- README: pinned, hash-verifiable install (clone `--branch v1.0.0` + `rev-parse` SHA check); Security & privacy and License sections; `SECURITY.md`/`LICENSE` added to the file map.
-- `install.md`: discloses what it touches and your data up front; pins to the release tag and verifies the commit SHA instead of cloning a moving `main`.
-- Provenance: documented the site → GitHub → repo identity chain. Signed release tags are planned (commit-SHA verification works today).
+- **Signed releases.** Release tags are now SSH-signed by the author; `SECURITY.md` publishes the public key and the `git tag -v` verification steps. A commit-SHA check is documented as a no-keys fallback.
+- README + `install.md`: pin installs to the signed `v1.0.1` tag (not a moving `main`) and verify it; added Security & privacy and License sections; `install.md` discloses what it touches and your data up front.
+- Provenance: documented the site → GitHub → repo identity chain.
 
 ---
 

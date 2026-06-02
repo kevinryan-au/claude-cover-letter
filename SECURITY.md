@@ -43,23 +43,38 @@ missing.
 - **Canonical source:** `https://github.com/kevinryan-au/claude-cover-letter`
 - **Linked from the author's site:** the project page at https://kevinryan-site.pages.dev/projects/ references this repo. Cross-checking that the link there points at the canonical URL above ties the code to a known identity (site → GitHub `kevinryan-au` → this repo).
 
-**Verify the exact code you installed (works today, no keys needed).** Each release
-tag resolves to a fixed commit. Confirm yours matches the published value:
+**Verify the release signature (recommended).** From `v1.0.1` on, release tags are
+**SSH-signed** by the author. On GitHub, a signed release tag carries a **Verified**
+badge. To verify locally, trust the author's public signing key once, then check the
+tag:
 
 ```bash
-git -C ~/.claude/skills/cover-letter rev-parse v1.0.0
-# expected: 3b0bbbad9d1103124e25abd2bc35fbc1ea6ea383
+# one-time: record the author's signing key as trusted
+mkdir -p ~/.config/git
+echo '285323821+kevinryan-au@users.noreply.github.com namespaces="git" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP3aJLsH7Ma7RiJL/tARmiH0c35FJnZ0sdIB0UT7q5UW' \
+  >> ~/.config/git/allowed_signers
+git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
+
+# verify the tag you installed
+git -C ~/.claude/skills/cover-letter tag -v v1.0.1
+# => Good "git" signature for 285323821+kevinryan-au@users.noreply.github.com
 ```
 
-If the SHA matches, your working copy is bit-for-bit the published release — a
-commit SHA is a cryptographic hash of the whole tree, so any tampering changes it.
-Published release SHAs are listed on the repo's
-[Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page.
+The author's public signing key (also shown on the
+[Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page):
 
-**Signed tags (hardening, in progress).** Cryptographically signed release tags —
-which let you verify authorship against the author's public key via
-`git tag -v <tag>` — are being added. Until a release's notes explicitly say it's
-signed, rely on the SHA check above rather than assuming `tag -v` will succeed.
+```
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP3aJLsH7Ma7RiJL/tARmiH0c35FJnZ0sdIB0UT7q5UW
+```
+
+**Or verify by commit SHA (no keys needed).** Each release tag resolves to a fixed
+commit, and a commit SHA is a hash of the whole tree — so any tampering changes it.
+Compare yours to the value published on the
+[Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page:
+
+```bash
+git -C ~/.claude/skills/cover-letter rev-parse v1.0.1
+```
 
 ## Install a pinned, verifiable version
 
