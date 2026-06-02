@@ -38,14 +38,9 @@ Use the **same single file as the chat path** — a Project just keeps it loaded
 
 1. Create a new Project in Claude.ai.
 2. Add [`cover-letter-assistant.md`](cover-letter-assistant.md) to its knowledge (method + your profile in one file). First time, add your CV too.
-3. Paste one line into the Project's custom instructions:
+3. Open a chat and paste a job ad. The file directs Claude on its own — no custom instruction needed. (First time: say "set up my profile" — it reads your CV, interviews you, and gives you an updated file to re-upload once.)
 
-   ```
-   Follow the attached cover-letter-assistant.md — it's your method and my
-   profile. When I paste a job ad, walk me through the outline and write the
-   letter as formatted text (no .docx), kept to one page.
-   ```
-4. Open a chat and paste a job ad. (First time: say "set up my profile" — it reads your CV, interviews you, and gives you an updated file to re-upload once.)
+> Fallback, rarely needed: if a Project ever doesn't pick up the method from the knowledge file, paste one line into its custom instructions — `Follow the attached cover-letter-assistant.md.`
 
 - **Memory:** remembers within the Project — it reads your profile from the file every time, but can't auto-save improvements. It suggests them; you update the file and re-upload.
 
