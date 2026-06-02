@@ -66,6 +66,25 @@ Then type `/cover-letter` in Claude Code. (Or drag [`install.md`](install.md) in
 
 All your personal data — CV, career anchors, skills framework, substantiated claims, style tokens, phrasing preferences — lives in a profile file **outside the skill** (`~/cover-letter-profile.md` for Claude Code; embedded in the chat file; an uploaded knowledge file in a Project). It's never committed to this repo. See [`templates/profile_template.md`](templates/profile_template.md) for the format.
 
+### Keeping it safe
+
+Your profile is the asset that compounds — losing it means starting the learning over. In the **Claude Code** path it's protected automatically: after every write, the skill runs [`scripts/profile-sync.sh`](scripts/profile-sync.sh), which
+
+- **snapshots** it to `~/.cover-letter/backups/` (last 10 kept), and
+- **commits** it to a local git history at `~/.cover-letter/` — so a bad write or an accidental delete is always recoverable.
+
+That's local and account-free by default. To add **offsite backup + sync across machines**, create your **own private repo** (your GitHub account, visible only to you — never this public skill repo) and point the data home at it once:
+
+```bash
+gh repo create cover-letter-profile --private
+git -C ~/.cover-letter remote add origin https://github.com/<you>/cover-letter-profile.git
+git -C ~/.cover-letter push -u origin main
+```
+
+After that, every profile update pushes there automatically. Restore after a loss with `cp ~/.cover-letter/cover-letter-profile.md ~/cover-letter-profile.md`, or browse `git -C ~/.cover-letter log`.
+
+(Chat and Projects hold the profile inside the uploaded file, so just keep that file somewhere backed up.)
+
 ## One source of truth
 
 Everything derives from **`SKILL.md`**. The chat file is *generated*, never hand-edited:

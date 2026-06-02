@@ -180,6 +180,16 @@ When a phrasing correction or stylistic call is worth keeping, propose the updat
 - New completed app + JD mapping → **Worked-examples log** in the profile
 - Visual styling tweaks → **Style tokens** in the profile
 
+## Protecting the profile — after every write
+
+The profile is the asset that compounds, so never leave a write unprotected. **Immediately after you write or edit the profile file, run the sync helper** (Claude Code only — there's no filesystem in chat/Projects, so skip it there):
+
+```bash
+scripts/profile-sync.sh
+```
+
+It snapshots the profile and commits it to a local git history at `~/.cover-letter/`, so any bad write or accidental deletion is recoverable. It pushes to a private remote only if the user has set one up. Run it quietly; report a one-line confirmation, not the mechanics. To restore after a loss: `cp ~/.cover-letter/cover-letter-profile.md ~/cover-letter-profile.md` (or check out an earlier version from that git repo).
+
 ---
 
 # REFERENCES — inlined for chat
