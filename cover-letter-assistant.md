@@ -20,7 +20,11 @@ here. Adapt as follows:
 - **Output.** Ignore all instructions about `python-docx`, `.docx`, `scripts/`,
   and visual QA — you cannot produce a Word file here. Deliver the finished letter
   as **clean, formatted text in the chat** that the user can paste into Word or
-  Google Docs.
+  Google Docs. **Aim for a single page — trim to fit rather than spilling onto a second.**
+- **Use the inlined guidance.** Two reference sections sit below the method
+  (**Tone & phrasing**, **Worked-examples format**) — the method points to them;
+  apply them. Especially the **opener-accuracy rule**: open with what *genuinely*
+  draws the user and frame any gap honestly later — never lead with a disclaimer.
 - **Saving / learning.** You cannot write to disk, so nothing saves automatically.
   When the profile would improve (a phrasing fix, a sharper skill line, a new
   worked example), **do not lose it** — at the end, print a **"📋 Update your
@@ -175,6 +179,122 @@ When a phrasing correction or stylistic call is worth keeping, propose the updat
 - A sharper skill statement → the **Skills** section in the profile (reusable across applications)
 - New completed app + JD mapping → **Worked-examples log** in the profile
 - Visual styling tweaks → **Style tokens** in the profile
+
+---
+
+# REFERENCES — inlined for chat
+_The method above points to these. In Claude Code they're separate files it loads on demand; in chat they're folded in here so nothing is missing._
+
+# Tone and phrasing
+
+Load when drafting any prose. This file holds the **voice & tone principles** (house style — inherit as-is) and the **phrasing-pass checklist**.
+
+The per-user material these principles draw on lives in the profile file (default `~/cover-letter-profile.md`):
+- **Role vocabulary** and **substantiated claims** — matched from the CV at setup.
+- **Phrasing log** — idiosyncratic word choices that grow from corrections.
+
+The dividing idea: **facts bootstrap, taste accumulates.** What's provably true can be read off the CV; how you like to phrase things only comes from real edits over time.
+
+## Voice & tone principles — use as-is
+
+### Warm but substantive
+Not stiff, not casual. Mirror your worked examples for register. Mix directness with personality — not pure confidence, not pure warmth.
+
+### No experience inflation
+Position sensitive areas honestly, and understate when unsure — overclaiming is the fastest way to lose credibility. *(The specific verbs you learn to avoid or prefer accumulate in the Phrasing log below.)*
+
+**Watch borrowed JD language.** Mirroring the job ad's wording is good — *unless* the CV doesn't back it. Don't adopt a JD term that overstates your background (e.g. calling B2B SaaS experience "enterprise SaaS" just because the ad says "enterprise," or claiming a sector you've only brushed). Match the JD's *intent* with words your substantiated claims actually support.
+
+### Don't overclaim familiarity (opener)
+If you haven't confirmed genuine familiarity with a company, use softer framing. This pairs with the opener intake in `SKILL.md`: strong familiarity earns a warmer, specific opener; little familiarity means honest, softer framing — never invented enthusiasm. Company facts you looked up are *context*, not familiarity — use them only for hooks the user genuinely connects with, never to manufacture a warmer tone than they feel.
+
+- **Avoid:** "I've followed [company] for years," "long-time admirer of"
+- **Prefer:** "the combination of X and Y is exactly the kind of environment I do my best work in"
+
+### Don't position yourself as a step up
+If you've operated at or above the advertised level, don't write the role as a stretch — let the scope and scale of your impact speak. Keep any internal level-equivalence notes out of the application itself.
+
+### Phrasing pass — before delivery
+Read the draft once, specifically for:
+
+1. **Repeated claims across bullets** — if one theme appears in all three, vary the framing (lead, set, frame, sequence).
+2. **Repeated openings** — bullet leads should vary, not "Leading," "Leading," "Leading."
+3. **Adjective inflation** — strip "extensive," "deep," "significant," "proven." Let numbers and outcomes carry the weight.
+4. **Recurring nouns** — a word appearing five times reads as filler. Vary or cut.
+5. **Bullets-vs-framework overlap** — the career-context bullets and the framework section must not restate the same themes. If a framework dimension just echoes a bullet ("you're strategic" in both), cut or recast it so the framework earns its place — a different lens, or the dimensions the bullets didn't cover. Belt-and-braces reads as padding and pushes the letter past a page.
+6. **Cross-document repetition** — anchor a thread in the cover letter *or* the CV, not both.
+
+## Your vocabulary, claims, and phrasing log — in the profile
+
+These per-user pieces live in the profile file (default `~/cover-letter-profile.md`), not here. The principles above tell you *how* to use them:
+
+- **Role vocabulary** (under *Matched from your CV*) — powers the "no context blurring" rule: language from one type of employer must not bleed into another. Matched from the CV at setup.
+- **Substantiated claims** (under *Matched from your CV*) — the whitelist behind "never invent experience." The draft draws **only** from it; anything beyond gets a `[placeholder]` rather than being invented.
+- **Phrasing log** (under *Logs*) — idiosyncratic word choices; add a row whenever a correction is worth keeping (see *Capturing new lessons* in `SKILL.md`).
+
+---
+
+# Worked examples
+
+This file defines the **format** of your worked-examples library and how to use it. The entries themselves accumulate in the profile file (default `~/cover-letter-profile.md`), under **Logs → Worked-examples log** — not here, so the skill stays read-only and shareable. Load this file on every new application to pattern-match before producing an outline.
+
+> **Template note:** the skeleton and example below are the format. Copy the skeleton into your profile's Worked-examples log for each new application; the example just shows the shape.
+
+## How to use this file
+
+1. Read the role you're working on against the entries in your profile's Worked-examples log — find the closest match in *type* of role (e.g. commercial leadership, scaled platform, builder/first hire, AI-heavy, marketplace).
+2. Borrow the structural decision (framework order, which anchor to lead with), not the wording.
+3. Note the corrections — they capture lessons that already cost an iteration.
+
+---
+
+## Entry skeleton — copy this for each new application
+
+### [Company] — [Role]
+
+**Company shape:** [size, sector, structure, location, any relocation context]
+
+**JD emphasis:** [the two or three things the ad stresses most]
+
+**Career-context bullets:**
+1. **[Bullet lead]** → [which anchor / evidence]
+2. **[Bullet lead]** → [which anchor / evidence]
+3. **[Bullet lead]** → [which anchor / evidence]
+
+**Framework order:** [your ordering for this role]
+
+**Why this order:** [one line]
+
+**Corrections that landed:** [lessons from drafting — optional]
+
+---
+
+## Example (delete or replace once you have real entries)
+
+### Acme Co — Senior PM
+
+**Company shape:** Mid-size B2B SaaS, ~150-person tech org.
+
+**JD emphasis:** Team leadership, working alongside engineers, product strategy.
+
+**Career-context bullets:**
+1. **Leading a team of product people** → [scaled-platform anchor: built teams from a blank page]
+2. **Working alongside engineers** → [same anchor: technical partnership, paying down debt on the way to value]
+3. **Driving strategy and roadmap** → [commercial anchor: turnaround + portfolio strategy]
+
+**Framework order:** Leadership → Storytelling → Strategy → Execution → Domain Knowledge
+
+**Why this order:** Leadership is the strongest match for a role that named team leadership repeatedly; Domain Knowledge demoted and acknowledged honestly (the sector is new).
+
+---
+
+## Patterns to watch for
+
+As your library grows, note the recurring rules you discover (in your profile) — they become your fastest shortcuts. For example:
+
+- Which framework dimension should *lead* for which role type (leadership-heavy vs. strategy-setting vs. execution-focused).
+- Which career anchor reliably carries which kind of bullet (commercial, platform/scale, builder/marketplace).
+- How you consistently handle the domain-knowledge gap (e.g. a durable "generalist who ramps fast" framing rather than overclaiming).
 
 ---
 

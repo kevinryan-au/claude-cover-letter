@@ -34,7 +34,11 @@ here. Adapt as follows:
 - **Output.** Ignore all instructions about `python-docx`, `.docx`, `scripts/`,
   and visual QA — you cannot produce a Word file here. Deliver the finished letter
   as **clean, formatted text in the chat** that the user can paste into Word or
-  Google Docs.
+  Google Docs. **Aim for a single page — trim to fit rather than spilling onto a second.**
+- **Use the inlined guidance.** Two reference sections sit below the method
+  (**Tone & phrasing**, **Worked-examples format**) — the method points to them;
+  apply them. Especially the **opener-accuracy rule**: open with what *genuinely*
+  draws the user and frame any gap honestly later — never lead with a disclaimer.
 - **Saving / learning.** You cannot write to disk, so nothing saves automatically.
   When the profile would improve (a phrasing fix, a sharper skill line, a new
   worked example), **do not lose it** — at the end, print a **"📋 Update your
@@ -61,6 +65,22 @@ HEADER
 echo
 # Embed SKILL.md without its YAML frontmatter (Claude Code metadata, irrelevant here)
 sed '1,/^---$/d' SKILL.md
+
+# Inline the reference files the method points to (there is no file-loading in chat).
+# styling.md is intentionally omitted — it's .docx mechanics that don't apply here.
+cat <<'REFMARK'
+
+---
+
+# REFERENCES — inlined for chat
+_The method above points to these. In Claude Code they're separate files it loads on demand; in chat they're folded in here so nothing is missing._
+
+REFMARK
+cat references/tone_and_phrasing.md
+echo
+echo "---"
+echo
+cat references/worked_examples.md
 
 cat <<'PROFILEMARK'
 
