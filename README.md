@@ -34,27 +34,20 @@ Download [`cover-letter-assistant.md`](cover-letter-assistant.md), drag it into 
 
 ### Claude Projects — paid, set up once
 
+Use the **same single file as the chat path** — a Project just keeps it loaded so you never re-drag it.
+
 1. Create a new Project in Claude.ai.
-2. Add to its knowledge: [`SKILL.md`](SKILL.md), your filled-in `cover-letter-profile.md`, and your CV.
-3. Paste this into the Project's custom instructions:
+2. Add [`cover-letter-assistant.md`](cover-letter-assistant.md) to its knowledge (method + your profile in one file). First time, add your CV too.
+3. Paste one line into the Project's custom instructions:
 
    ```
-   You are my cover-letter assistant. Follow the method in SKILL.md, and use
-   the uploaded cover-letter-profile.md as my profile — read it from there, not
-   from any file path the method mentions.
-
-   This is a Claude Project, not Claude Code: you have no terminal and cannot
-   create a .docx. Ignore every instruction in SKILL.md about python-docx,
-   scripts/, .docx output, assets/, or reading/writing files on disk. Deliver
-   the finished letter as clean, formatted text I can copy, kept to a single
-   page. If you can't look up the company online, skip that quietly.
-
-   At the end, if anything would sharpen my profile, show me the exact lines
-   to paste back into cover-letter-profile.md.
+   Follow the attached cover-letter-assistant.md — it's your method and my
+   profile. When I paste a job ad, walk me through the outline and write the
+   letter as formatted text (no .docx), kept to one page.
    ```
-4. Open a chat in the Project and paste a job ad.
+4. Open a chat and paste a job ad. (First time: say "set up my profile" — it reads your CV, interviews you, and gives you an updated file to re-upload once.)
 
-- **Memory:** remembers within the Project — it reads your profile every time, but can't auto-save improvements. It suggests them; you update the file and re-upload.
+- **Memory:** remembers within the Project — it reads your profile from the file every time, but can't auto-save improvements. It suggests them; you update the file and re-upload.
 
 ### Claude Code — paid, full experience
 
