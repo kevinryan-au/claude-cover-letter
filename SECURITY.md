@@ -82,7 +82,7 @@ Prefer pinning to a release tag over cloning a moving `main`, so what you instal
 can't change underneath you:
 
 ```bash
-git clone --branch v1.0.0 --depth 1 \
+git clone --branch v1.0.2 --depth 1 \
   https://github.com/kevinryan-au/claude-cover-letter.git \
   ~/.claude/skills/cover-letter
 ```

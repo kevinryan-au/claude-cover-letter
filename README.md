@@ -119,6 +119,7 @@ references/                   — tone & phrasing, styling spec, worked-examples
 scripts/build-chat-edition.sh — regenerates the Chat Edition
 scripts/profile-sync.sh       — local backup + git history for your profile
 scripts/visual_qa.sh          — optional .docx preview (Claude Code)
+scripts/release.sh            — cut a signed, verifiable release (maintainer)
 SECURITY.md                   — data handling, what runs locally, how to verify
 DISCLAIMER.md                 — as-is, no advice, no Anthropic affiliation
 LICENSE                       — MIT

@@ -4,6 +4,11 @@ All notable changes to this skill are listed here. Versions follow [semantic ver
 
 ---
 
+## [Unreleased]
+
+- Fixed a stale clone pin in `SECURITY.md` — it still pointed at the removed `v1.0.0` tag; now `v1.0.2`.
+- Added `scripts/release.sh`: one-shot signed release — bumps the install/verify references, promotes the changelog, signs the commit + tag, pushes, and creates the GitHub release.
+
 ## [1.0.2] — 2026-06-03
 
 - Added `DISCLAIMER.md`: as-is / no warranty, no legal-or-career advice, user is responsible for submitted content, and an explicit "not affiliated with or endorsed by Anthropic" notice. Linked from the README.
