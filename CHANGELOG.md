@@ -4,9 +4,10 @@ All notable changes to this skill are listed here. Versions follow [semantic ver
 
 ---
 
-## [Unreleased]
+## [1.0.2] — 2026-06-03
 
 - Added `DISCLAIMER.md`: as-is / no warranty, no legal-or-career advice, user is responsible for submitted content, and an explicit "not affiliated with or endorsed by Anthropic" notice. Linked from the README.
+- Install instructions pin to `v1.0.2`.
 
 ## [1.0.1] — 2026-06-03
 

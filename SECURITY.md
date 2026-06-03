@@ -56,7 +56,7 @@ echo '285323821+kevinryan-au@users.noreply.github.com namespaces="git" ssh-ed255
 git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
 
 # verify the tag you installed
-git -C ~/.claude/skills/cover-letter tag -v v1.0.1
+git -C ~/.claude/skills/cover-letter tag -v v1.0.2
 # => Good "git" signature for 285323821+kevinryan-au@users.noreply.github.com
 ```
 
@@ -73,7 +73,7 @@ Compare yours to the value published on the
 [Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page:
 
 ```bash
-git -C ~/.claude/skills/cover-letter rev-parse v1.0.1
+git -C ~/.claude/skills/cover-letter rev-parse v1.0.2
 ```
 
 ## Install a pinned, verifiable version
