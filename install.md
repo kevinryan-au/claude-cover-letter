@@ -15,13 +15,13 @@ This installs the cover-letter skill into Claude Code so the user can invoke it 
 1. Clone, pinned to a signed release tag (so the install can't change underneath the user):
 
 ```bash
-git clone --branch v1.0.2 --depth 1 https://github.com/kevinryan-au/claude-cover-letter.git ~/.claude/skills/cover-letter
+git clone --branch v1.0.3 --depth 1 https://github.com/kevinryan-au/claude-cover-letter.git ~/.claude/skills/cover-letter
 ```
 
 2. Verify the install: confirm `~/.claude/skills/cover-letter/SKILL.md` exists, then verify the signed tag:
 
 ```bash
-git -C ~/.claude/skills/cover-letter tag -v v1.0.2
+git -C ~/.claude/skills/cover-letter tag -v v1.0.3
 ```
 
    A "Good \"git\" signature" confirms the release is the author's and unmodified. If the user hasn't trusted the author's signing key yet, point them to `SECURITY.md` (it has the one-time key-trust step, plus a commit-SHA fallback). If verification fails outright, stop.
