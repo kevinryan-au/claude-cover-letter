@@ -120,6 +120,7 @@ scripts/build-chat-edition.sh — regenerates the Chat Edition
 scripts/profile-sync.sh       — local backup + git history for your profile
 scripts/visual_qa.sh          — optional .docx preview (Claude Code)
 SECURITY.md                   — data handling, what runs locally, how to verify
+DISCLAIMER.md                 — as-is, no advice, no Anthropic affiliation
 LICENSE                       — MIT
 ```
 
@@ -152,6 +153,8 @@ Authenticity: the canonical repo is
 and release tags are **SSH-signed** and hash-verifiable (see
 [`SECURITY.md`](SECURITY.md)).
 
-## License
+## License & disclaimer
 
-[MIT](LICENSE) © 2026 Kevin Ryan.
+[MIT](LICENSE) © 2026 Kevin Ryan. Free and open source, provided **as-is with no
+warranty** — see [`DISCLAIMER.md`](DISCLAIMER.md) (no professional advice; you're
+responsible for what you submit; not affiliated with or endorsed by Anthropic).

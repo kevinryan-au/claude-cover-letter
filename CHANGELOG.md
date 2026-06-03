@@ -4,6 +4,10 @@ All notable changes to this skill are listed here. Versions follow [semantic ver
 
 ---
 
+## [Unreleased]
+
+- Added `DISCLAIMER.md`: as-is / no warranty, no legal-or-career advice, user is responsible for submitted content, and an explicit "not affiliated with or endorsed by Anthropic" notice. Linked from the README.
+
 ## [1.0.1] — 2026-06-03
 
 Trust & transparency hardening (no behaviour change to the assistant):
