@@ -6,7 +6,7 @@ All notable changes to this skill are listed here. Versions follow [semantic ver
 
 ## [Unreleased]
 
-- Fixed a stale clone pin in `SECURITY.md` — it still pointed at the removed `v1.0.0` tag; now `v1.0.2`.
+- Fixed a stale clone pin in `SECURITY.md` that still referenced the removed `v1.0.0` tag.
 - Added `scripts/release.sh`: one-shot signed release — bumps the install/verify references, promotes the changelog, signs the commit + tag, pushes, and creates the GitHub release.
 
 ## [1.0.2] — 2026-06-03
