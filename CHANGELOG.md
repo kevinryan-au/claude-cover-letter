@@ -4,6 +4,15 @@ All notable changes to this skill are listed here. Versions follow [semantic ver
 
 ---
 
+## [Unreleased]
+
+**Breaking: the skill is renamed `cover-letter` → `coverwright`.**
+
+- Renamed the skill to `coverwright`, invoked with `/coverwright`, installed to `~/.claude/skills/coverwright`. The old name collided with another skill advertising an identical description, so a pasted job ad could trigger either one — and the other copy was a stale single-file snapshot with none of the `references/`, `scripts/` or `templates/` it still instructs Claude to use.
+- Rewrote the `description` in `SKILL.md` frontmatter to differentiate on what this skill actually does — the persistent profile and the `.docx` output. The rename alone would not have resolved the collision, since trigger matching reads the description.
+- `install.md` and the README now tell upgraders to remove a leftover `~/.claude/skills/cover-letter`, which otherwise keeps competing for the same trigger.
+- **Profile paths are unchanged:** `~/cover-letter-profile.md` and `~/.cover-letter/` keep their names, so there is nothing to migrate and no existing profile is orphaned.
+
 ## [1.0.3] — 2026-06-03
 
 - Fixed a stale clone pin in `SECURITY.md` that still referenced the removed `v1.0.0` tag.

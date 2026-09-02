@@ -56,7 +56,7 @@ echo '285323821+kevinryan-au@users.noreply.github.com namespaces="git" ssh-ed255
 git config --global gpg.ssh.allowedSignersFile ~/.config/git/allowed_signers
 
 # verify the tag you installed
-git -C ~/.claude/skills/cover-letter tag -v v1.0.3
+git -C ~/.claude/skills/coverwright tag -v v1.0.3
 # => Good "git" signature for 285323821+kevinryan-au@users.noreply.github.com
 ```
 
@@ -73,7 +73,7 @@ Compare yours to the value published on the
 [Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page:
 
 ```bash
-git -C ~/.claude/skills/cover-letter rev-parse v1.0.3
+git -C ~/.claude/skills/coverwright rev-parse v1.0.3
 ```
 
 ## Install a pinned, verifiable version
@@ -84,7 +84,7 @@ can't change underneath you:
 ```bash
 git clone --branch v1.0.3 --depth 1 \
   https://github.com/kevinryan-au/claude-cover-letter.git \
-  ~/.claude/skills/cover-letter
+  ~/.claude/skills/coverwright
 ```
 
 Then verify the tag signature (above) before first use.

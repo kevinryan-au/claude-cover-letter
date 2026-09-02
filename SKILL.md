@@ -1,6 +1,6 @@
 ---
-name: cover-letter
-description: Tailor cover letters for job applications. Use when a cover letter is required for a specific role — trigger by pasting in job ad text.
+name: coverwright
+description: Tailor a cover letter from a saved personal profile that learns your voice across applications. Use when applying for a specific role — paste the job ad. Outputs a formatted .docx.
 ---
 
 # Cover letter tailoring

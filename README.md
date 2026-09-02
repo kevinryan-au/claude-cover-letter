@@ -1,6 +1,8 @@
-# claude-cover-letter
+# Coverwright
 
 A cover-letter assistant that **learns your voice and gets sharper with every role you apply for.** Runs in Claude chat, Claude Projects, or Claude Code.
+
+> Installs as the `coverwright` skill and is invoked with `/coverwright`. Before v2.0.0 it was named `cover-letter` — see [Upgrading from `cover-letter`](#upgrading-from-cover-letter).
 
 It isn't a generator. The first time you use it, it reads your CV and interviews you to build a **profile** — your career anchors, your best evidence, your voice. Every letter is drawn from that, and every letter you write makes the profile a little sharper: the phrasings that landed, the framing that worked, the wins worth leading with.
 
@@ -52,18 +54,18 @@ you install can't change underneath you:
 ```bash
 git clone --branch v1.0.3 --depth 1 \
   https://github.com/kevinryan-au/claude-cover-letter.git \
-  ~/.claude/skills/cover-letter
+  ~/.claude/skills/coverwright
 ```
 
-Then **verify the release** before first use, and type `/cover-letter`. Release
+Then **verify the release** before first use, and type `/coverwright`. Release
 tags are SSH-signed, so once you've trusted the author's key (see
 [`SECURITY.md`](SECURITY.md)):
 
 ```bash
-git -C ~/.claude/skills/cover-letter tag -v v1.0.3   # "Good \"git\" signature for 285323821+kevinryan-au@…"
+git -C ~/.claude/skills/coverwright tag -v v1.0.3   # "Good \"git\" signature for 285323821+kevinryan-au@…"
 ```
 
-No keys handy? Confirm the commit SHA instead — `git -C ~/.claude/skills/cover-letter
+No keys handy? Confirm the commit SHA instead — `git -C ~/.claude/skills/coverwright
 rev-parse v1.0.3` must match the value on the
 [Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page (a
 SHA hashes the whole tree, so a match means no tampering). See
@@ -127,10 +129,20 @@ LICENSE                       — MIT
 
 ## Updating
 
-- **Claude Code:** `git -C ~/.claude/skills/cover-letter pull`
+- **Claude Code:** `git -C ~/.claude/skills/coverwright pull`
 - **Chat / Projects:** re-download `cover-letter-assistant.md` / re-upload `SKILL.md`.
 
 Your profile file lives outside the skill and is never touched by updates.
+
+## Upgrading from `cover-letter`
+
+Before v2.0.0 the skill installed as `cover-letter` and was invoked with `/cover-letter`. It now installs as `coverwright`. Install to the new path as above, then remove the old directory — if you leave it, two skills advertise themselves for the same job-ad trigger and Claude may pick the stale one:
+
+```bash
+rm -rf ~/.claude/skills/cover-letter
+```
+
+**Your profile is not affected.** It lives outside the skill at `~/cover-letter-profile.md` (backed up in `~/.cover-letter/`), and those paths are unchanged by the rename — there is nothing to migrate.
 
 ## Requirements
 
