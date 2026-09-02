@@ -52,7 +52,7 @@ Clone the repo into your skills folder — pinned to a signed release tag so wha
 you install can't change underneath you:
 
 ```bash
-git clone --branch v1.0.3 --depth 1 \
+git clone --branch v2.0.0 --depth 1 \
   https://github.com/kevinryan-au/claude-cover-letter.git \
   ~/.claude/skills/coverwright
 ```
@@ -62,11 +62,11 @@ tags are SSH-signed, so once you've trusted the author's key (see
 [`SECURITY.md`](SECURITY.md)):
 
 ```bash
-git -C ~/.claude/skills/coverwright tag -v v1.0.3   # "Good \"git\" signature for 285323821+kevinryan-au@…"
+git -C ~/.claude/skills/coverwright tag -v v2.0.0   # "Good \"git\" signature for 285323821+kevinryan-au@…"
 ```
 
 No keys handy? Confirm the commit SHA instead — `git -C ~/.claude/skills/coverwright
-rev-parse v1.0.3` must match the value on the
+rev-parse v2.0.0` must match the value on the
 [Releases](https://github.com/kevinryan-au/claude-cover-letter/releases) page (a
 SHA hashes the whole tree, so a match means no tampering). See
 [`SECURITY.md`](SECURITY.md) for what the skill does with your data and what runs

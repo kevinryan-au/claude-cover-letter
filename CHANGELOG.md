@@ -4,7 +4,7 @@ All notable changes to this skill are listed here. Versions follow [semantic ver
 
 ---
 
-## [Unreleased]
+## [2.0.0] — 2026-09-02
 
 **Breaking: the skill is renamed `cover-letter` → `coverwright`.**
 

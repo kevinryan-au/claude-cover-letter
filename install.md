@@ -15,13 +15,13 @@ This installs Coverwright — a cover-letter skill — into Claude Code so the u
 1. Clone, pinned to a signed release tag (so the install can't change underneath the user):
 
 ```bash
-git clone --branch v1.0.3 --depth 1 https://github.com/kevinryan-au/claude-cover-letter.git ~/.claude/skills/coverwright
+git clone --branch v2.0.0 --depth 1 https://github.com/kevinryan-au/claude-cover-letter.git ~/.claude/skills/coverwright
 ```
 
 2. Verify the install: confirm `~/.claude/skills/coverwright/SKILL.md` exists, then verify the signed tag:
 
 ```bash
-git -C ~/.claude/skills/coverwright tag -v v1.0.3
+git -C ~/.claude/skills/coverwright tag -v v2.0.0
 ```
 
    A "Good \"git\" signature" confirms the release is the author's and unmodified. If the user hasn't trusted the author's signing key yet, point them to `SECURITY.md` (it has the one-time key-trust step, plus a commit-SHA fallback). If verification fails outright, stop.
